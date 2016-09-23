@@ -21,6 +21,12 @@ Route::post('/signin', [
     'as' => 'signin',  //using 'as' also gives the route a name/alias
 ]);
 
+Route::get('/signout', [
+    'uses' => 'UserController@getSignout',
+    'as' => 'signout',
+    'middleware' => 'auth',
+]);
+
 Route::post('/signup', [
     'uses' => 'UserController@postSignup',
     'as' => 'signup',
@@ -71,9 +77,8 @@ Route::get('/userimage/{filename}', [
     'middleware' => 'auth',
 ]);
 //-----------------
-
-Route::get('/signout', [
-    'uses' => 'UserController@getSignout',
-    'as' => 'signout',
+Route::post('/like', [
+    'uses' => 'PostController@postLikePost',
+    'as' => 'post.like',
     'middleware' => 'auth',
 ]);

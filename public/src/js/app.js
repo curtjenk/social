@@ -36,7 +36,7 @@ $('#modal-save').on('click', function() {
 })
 
 $('.like').on('click', function(event) {
-    postId = event.target.parentNode.parentNode.dataset['postid'
+    postId = event.target.parentNode.parentNode.dataset['postid'];
     //assume Like is first and Dislike is second
     var isLike = event.target.previousElementSibling == null ? true : false;
     //isLike == true  Like clicked
@@ -45,7 +45,7 @@ $('.like').on('click', function(event) {
 
     $.ajax({
         method: 'POST',
-        url: urlLike
+        url: urlLike,
         data: {isLike: isLike, postId: postId, _token: token}
     })
     .done(function(msg){

@@ -68,7 +68,7 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     <script>
-       //we'll need these to make the jquery ajax call
+       //we'll need these to make the jquery ajax calls
        var token = "{{ Session::token() }}";
        var urlEdit = "{{ route('post.edit') }}";
        var urlLike = "{{ route('post.like') }}"; //one route for like and dislkie
