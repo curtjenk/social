@@ -75,14 +75,25 @@ class UserController extends Controller
         ]);
 
         $user = Auth::user();
+        $prev_first_name = $user->first_name;
         $user->first_name = $request['first_name'];
         $user->update();
         $file = $request->file('image');
         $filename = $request['first_name'].'-'.$user->id.'.jpg';
+        $prev_filename = $prev_first_name.'-'.$user->id.'.jpg';
         //check if there was a file submitted in the request
         if ($file) {
             //write the file to the storage/app folder per filesystems.php configuration
+            Log::info($filename);
+            // if ($prev_filename != $filename) {
+
+            // }
             Storage::disk('local')->put($filename, File::get($file));
+        } else {
+            if ($prev_first_name != $request['first_name']) {
+                //update the filename on disk
+                Storage::disk('local')->move($prev_filename, $filename);
+            }
         }
 
         return redirect()->route('account');

@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+    <?php phpinfo(); ?>
     <div class="row text-center">
         <h1>My Social Network</h1>
     </div>
