@@ -9,7 +9,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="{{ route('home') }}">
+                     <img alt="Brand" src="{{ asset('src/img/social-media-image.jpg') }}" class="img-responsive" style="max-height:400%; border-radius:25px">
+                     <h6 class="text">Home</h6>
+                </a>
             </div>
             <div class="welcome text-center">
                 <!--check if a user is logged-in-->

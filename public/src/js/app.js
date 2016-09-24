@@ -49,7 +49,21 @@ $('.like').on('click', function(event) {
         data: {isLike: isLike, postId: postId, _token: token}
     })
     .done(function(msg){
-        console.log(msg);
-        //change the page
+        //event.target.innerText = isLike ? event.target.innerText == 'Like' ? 'You like this post' : 'Like' : event.target.innerText == 'Dislike' ? 'You dislike this post' : 'Dislike';
+        if (isLike) {
+            if (event.target.textContent == 'Like') {
+               event.target.textContent = 'You like this post';
+           } else {
+                event.target.textContent = 'Like';
+           }
+            event.target.nextElementSibling.textContent = 'Dislike';
+        } else {
+            if (event.target.textContent == 'Dislike') {
+               event.target.textContent = 'You Dislike this post';
+           } else {
+                event.target.textContent = 'DisLike';
+           }
+            event.target.previousElementSibling.textContent = 'Like';
+        }
      });
 })

@@ -1,12 +1,12 @@
 .welcome {
      width:100%;
-     position: absolute; 
-     padding:0; 
+     position: absolute;
+     padding:0;
      line-height:50px;
      font-size:25px;
 }
 .new-post {
-    
+
     padding: 16px 0;
     border-bottom: 1px solid #ccc;
 }
@@ -47,4 +47,16 @@
     border: 1px solid green;
     background-color: #d1f9da;
     color: green;
+}
+
+.navbar-brand .text {
+    position:relative;
+    bottom:10px;
+    left:25px;
+    color: red;
+    font-style: italic;
+    visibility:hidden;
+}
+.navbar-brand:hover .text {
+    visibility:visible;
 }
